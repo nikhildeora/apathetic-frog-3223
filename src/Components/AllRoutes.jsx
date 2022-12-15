@@ -10,6 +10,7 @@ import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
 import MyPlans from '../Pages/MyPlans'
 import CreatenewPlan from '../Pages/CreatenewPlan'
+import ExercisecompleteDetailpage from '../Pages/ExercisecompleteDetailpage'
 
 
 const AllRoutes = () => {
@@ -20,6 +21,7 @@ const AllRoutes = () => {
         <Route path="/myplans" element={<MyPlans />}></Route>
         <Route path="/createnewplan" element={<CreatenewPlan />}></Route>
         <Route path='/exercise' element={<Exercise />}></Route>
+        <Route path='/exercisedetail/:id' element={<ExercisecompleteDetailpage />}></Route>
         <Route path='/community' element={<Community />}></Route>
         <Route path='/coach' element={<Coach />}></Route>
         <Route path='/elite' element={<Elite />}></Route>

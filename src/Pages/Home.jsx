@@ -4,7 +4,6 @@ import ButtonWithShadow from '../Components/Button';
 import SplitWithImagefirst from '../Components/Features1';
 import SplitWithImagesecond from '../Components/Features2';
 import SplitWithImagethird from '../Components/Features3';
-import Footer from '../Components/Footer';
 import HeroBanner from '../Components/HeroBanner';
 import Pricing from '../Components/Pricing';
 
@@ -66,8 +65,7 @@ const Home = () => {
         <ButtonWithShadow buttontext={"Create Workout Plan"} />
       </VStack>
 
-      {/* Footer component  */}
-      <Footer />
+      
     </>
   )
 }
