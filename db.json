@@ -1,0 +1,46 @@
+{
+  "schedule": [
+    {
+      "myday": "Monday",
+      "schedules": [],
+      "id": 2
+    },
+    {
+      "myday": "Tuesday",
+      "schedules": [],
+      "id": 3
+    },
+    {
+      "myday": "Wednesday",
+      "schedules": [
+        
+      ],
+      "id": 4
+    },
+    {
+      "myday": "Thursday",
+      "schedules": [],
+      "id": 5
+    },
+    {
+      "myday": "Friday",
+      "schedules": [],
+      "id": 6
+    },
+    {
+      "myday": "Saturday",
+      "schedules": [],
+      "id": 7
+    }
+  ],
+  "userprofile": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
