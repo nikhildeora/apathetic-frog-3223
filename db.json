@@ -1,19 +1,50 @@
 {
   "schedule": [
     {
-      "myday": "Monday",
-      "schedules": [],
-      "id": 2
-    },
-    {
       "myday": "Tuesday",
-      "schedules": [],
+      "schedules": [
+        {
+          "key": 3,
+          "category": 8,
+          "exercise_base": 95,
+          "name": "Bizeps am Kabel",
+          "order": "2",
+          "reps": "6",
+          "sets": 5
+        },
+        {
+          "key": 308,
+          "category": 14,
+          "exercise_base": 146,
+          "name": "Calf Press Using Leg Press Machine",
+          "order": "4",
+          "reps": 4,
+          "sets": 5
+        },
+        {
+          "key": 22,
+          "category": 9,
+          "exercise_base": 365,
+          "name": "Beinbeuger Liegend",
+          "order": 1,
+          "reps": 4,
+          "sets": 5
+        }
+      ],
       "id": 3
     },
     {
       "myday": "Wednesday",
       "schedules": [
-        
+        {
+          "key": 81,
+          "category": 8,
+          "exercise_base": 92,
+          "name": "Biceps Curls With Dumbbell",
+          "order": 1,
+          "reps": 4,
+          "sets": 5
+        }
       ],
       "id": 4
     },
@@ -23,16 +54,61 @@
       "id": 5
     },
     {
-      "myday": "Friday",
-      "schedules": [],
+      "myday": "Monday",
+      "schedules": [
+        {
+          "key": 34,
+          "category": 10,
+          "exercise_base": 377,
+          "name": "Beinheben Liegend",
+          "order": 1,
+          "reps": "5",
+          "sets": 5
+        },
+        {
+          "key": 343,
+          "category": 10,
+          "exercise_base": 41,
+          "name": "Barbell Ab Rollout",
+          "order": 1,
+          "reps": 4,
+          "sets": 5
+        }
+      ],
       "id": 6
     },
     {
-      "myday": "Saturday",
-      "schedules": [],
+      "myday": "Sunday",
+      "schedules": [
+        {
+          "key": 4,
+          "category": 10,
+          "exercise_base": 167,
+          "name": "Crunches",
+          "order": 1,
+          "reps": 4,
+          "sets": 5
+        },
+        {
+          "key": 113,
+          "category": 9,
+          "exercise_base": 206,
+          "name": "Dumbbell Lunges Walking",
+          "order": 1,
+          "reps": 4,
+          "sets": 5
+        }
+      ],
       "id": 7
     }
   ],
+  "monday": [],
+  "tuesday": [],
+  "wednesday": [],
+  "thursday": [],
+  "friday": [],
+  "saturday": [],
+  "sunday": [],
   "userprofile": [
     {
       "id": 1,
