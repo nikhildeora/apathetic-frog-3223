@@ -41,6 +41,7 @@ export default function ExercisecompleteDetailpage() {
     useEffect(() => {
         axios(axiosdata)
             .then((res) => {
+                // console.log(res.data);
                 setExedata(res.data)
                 setCategory(res.data.category)
                 setEquipment(res.data.equipment)
@@ -54,11 +55,12 @@ export default function ExercisecompleteDetailpage() {
     // console.log(equipment);
     // console.log(exercise);
     // console.log(image);
-
+    // console.log(exercise.name);
+//    console.log(video);
     
 
     useEffect(()=>{
-        axios(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&maxResults=2&q=Burpees&key=AIzaSyC7hE9Bd8wEXxTPrpQAzm5yQBXNm4pqlHA&safeSearch=strict&type=video&videoEmbeddable=true`)
+        axios(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&maxResults=2&q=${exercise.name}exercise&key=AIzaSyC7hE9Bd8wEXxTPrpQAzm5yQBXNm4pqlHA&safeSearch=strict&type=video&videoEmbeddable=true`)
         .then((res) => {
             setVideo(res.data.items)
         })
@@ -111,10 +113,11 @@ export default function ExercisecompleteDetailpage() {
             </Center>
 
 
-             <Box direction={"row"}> 
+
+             <Box direction={"row"} >   
 
                 {video && video.map((item) => {
-                    return  <AspectRatio key={item.etag} maxW='320px' ratio={1}>
+                    return  <AspectRatio key={item.etag} maxW={["300px","500px","800px"]} ratio={1} m={"auto"} mb={"30px"}>
                     <iframe
                         title='naruto'
                         src={`https://www.youtube.com/embed/${item.id.videoId}`}
@@ -122,7 +125,9 @@ export default function ExercisecompleteDetailpage() {
                         />
                     </AspectRatio>
                 })}
+            
             </Box>
+           
            
 
         </>)
