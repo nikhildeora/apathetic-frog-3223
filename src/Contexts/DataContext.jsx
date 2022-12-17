@@ -6,9 +6,11 @@ export const DataContext = createContext();
 export default function DataContextProvider({ children }) {
     const [completescheduledata, setCompletescheduledata] = useState([])
     const [contextstate, setContextstate] = useState(true)
+    const [blog, setBlog] = useState({})
 
     useEffect(() => {
-        axios(`http://localhost:8000/schedule`)
+        // axios(`http://localhost:8000/schedule`)
+        axios(`https://render-deployed-fitnexy.onrender.com/schedule`)
             .then((res) => {
                 setCompletescheduledata(res.data)
                 console.log(res.data)
@@ -18,7 +20,8 @@ export default function DataContextProvider({ children }) {
 
     const Deletewholeday = (id) => {
         setContextstate(!contextstate);
-        axios.delete(`http://localhost:8000/schedule/${id}`)
+        // axios.delete(`http://localhost:8000/schedule/${id}`)
+        axios.delete(`https://render-deployed-fitnexy.onrender.com/schedule/${id}`)
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
     }
@@ -30,7 +33,8 @@ export default function DataContextProvider({ children }) {
 
         // console.log("myExceptionalarr" , myExceptionalarr);
 
-        axios.patch(`http://localhost:8000/schedule/${id}`, {
+        // axios.patch(`http://localhost:8000/schedule/${id}`, {
+        axios.patch(`https://render-deployed-fitnexy.onrender.com/schedule/${id}`, {
             "schedules": [...myExceptionalarr]
         })
             .then(() => setContextstate(!contextstate))
@@ -49,19 +53,24 @@ export default function DataContextProvider({ children }) {
         let secondExceptionalArr = schedule.filter((item) => {
             return item.key !== parid
         })
-        
+
         // console.log("particulararr",particularobj);
         // console.log("secondarr",secondExceptionalArr);
 
-        axios.patch(`http://localhost:8000/schedule/${id}`, {
+        // axios.patch(`http://localhost:8000/schedule/${id}`, {
+        axios.patch(`https://render-deployed-fitnexy.onrender.com/schedule/${id}`, {
             "schedules": [...particularobj, ...secondExceptionalArr]
         })
             .then(() => setContextstate(!contextstate))
 
     }
 
+    const BlogsetState = (blog) => {
+        setBlog(blog)
+    }
+
     return (
-        <DataContext.Provider value={{ completescheduledata, Deletewholeday, Deleteparticularexercise, setContextstate, contextstate, PatchparticularDig }}>
+        <DataContext.Provider value={{ completescheduledata, Deletewholeday, Deleteparticularexercise, setContextstate, contextstate, PatchparticularDig, BlogsetState, blog }}>
             {children}
         </DataContext.Provider>)
 }
