@@ -318,7 +318,7 @@ const NAV_ITEMS = [
         href: '/exercise',
     },
     {
-        label: 'Community',
+        label: 'Blog',
         href: '/community',
     },
     {

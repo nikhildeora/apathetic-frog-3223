@@ -11,6 +11,8 @@ import Signup from '../Pages/Signup'
 import MyPlans from '../Pages/MyPlans'
 import CreatenewPlan from '../Pages/CreatenewPlan'
 import ExercisecompleteDetailpage from '../Pages/ExercisecompleteDetailpage'
+import AllExerciseTable from '../Pages/AllExerciseTable'
+import SingleBlog from '../Pages/SingleBlog'
 
 
 const AllRoutes = () => {
@@ -27,6 +29,8 @@ const AllRoutes = () => {
         <Route path='/elite' element={<Elite />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/allexercise/:category' element={<AllExerciseTable />}></Route>
+        <Route path='/singleblog' element={<SingleBlog />}></Route>
     </Routes>
   )
 }

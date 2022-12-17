@@ -33,7 +33,8 @@ const CreatenewPlan = () => {
   const [statetd, setStatetd] = useState(true)
 
   useEffect(() => {
-    axios(`http://localhost:8000/schedule`)
+    // axios(`http://localhost:8000/schedule`)
+    axios(`https://render-deployed-fitnexy.onrender.com/schedule`)
       .then((res) => {
         setDayid(res.data[0].id)
       })
@@ -42,7 +43,8 @@ const CreatenewPlan = () => {
   useEffect(() => {
     setState(true)
     setStatetd(true)
-    axios(`http://localhost:8000/schedule`)
+    // axios(`http://localhost:8000/schedule`)
+    axios(`https://render-deployed-fitnexy.onrender.com/schedule`)
       .then((res) => {
         setSchejson(res.data)
         console.log(res.data)
@@ -55,7 +57,8 @@ const CreatenewPlan = () => {
   // console.log("sche",schejson.schedules);
   // console.log("dayid", dayid);
   const Postdata = () => {
-    axios.post(`http://localhost:8000/schedule`, {
+    // axios.post(`http://localhost:8000/schedule`, {
+    axios.post(`https://render-deployed-fitnexy.onrender.com/schedule`, {
       "myday": day,
       "schedules": []
     })
@@ -89,12 +92,14 @@ const CreatenewPlan = () => {
     // Getdaywiseschedule(datayetobj)
 
     let newdeeclareobj = [];
-    axios(`http://localhost:8000/schedule/${dayid}`)
+    // axios(`http://localhost:8000/schedule/${dayid}`)
+    axios(`https://render-deployed-fitnexy.onrender.com/schedule/${dayid}`)
       .then((res) => {
         newdeeclareobj = res.data.schedules
       }).then(() => console.log("newdeclared", newdeeclareobj))
       .finally(() => {
-        axios.patch(`http://localhost:8000/schedule/${dayid}`, {
+        // axios.patch(`http://localhost:8000/schedule/${dayid}`, {
+        axios.patch(`https://render-deployed-fitnexy.onrender.com/schedule/${dayid}`, {
           "schedules": [...newdeeclareobj, datayetobj]
         })
       })
