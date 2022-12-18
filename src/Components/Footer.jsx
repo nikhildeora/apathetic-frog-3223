@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import logo from "../Images/Newfitnexylogo.jpg"
+import {Link as RouterLink} from "react-router-dom"
 
 
 
@@ -39,24 +40,24 @@ export default function Footer() {
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Resource</ListHeader>
-                        <Link href={'#'}>Workout Plans</Link>
-                        <Link href={'#'}>Exercises Database</Link>
+                        <RouterLink to={"/createnewplan"}>Workout Plans</RouterLink>
+                        <RouterLink to={"/exercise"}>Exercises Database</RouterLink>
                         <Link href={'#'}>Community</Link>
                         <Link href={'#'}>Help Center</Link>
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Legal Press</ListHeader>
-                        <Link href={'#'}>Privacy Policy</Link>
+                        <RouterLink to={"/privacypolicy"}>Privacy Policy</RouterLink>
                         <Link href={'#'}>Terms of Use</Link>
                         <Link href={'#'}>IP / DMCA Notices</Link>
                         <Link href={'#'}>Press & Media</Link>
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Follow Us</ListHeader>
-                        <Link href={'#'}>Blog</Link>
-                        <Link href={'#'}>Facebook</Link>
-                        <Link href={'#'}>Twitter</Link>
-                        <Link href={'#'}>Instagram</Link>
+                        <RouterLink  to={"/community"}>Blog</RouterLink>
+                        <Link href={'https://www.facebook.com/jefitapp/'} target="_blank">Facebook</Link>
+                        <Link href={'https://twitter.com/jefitinc/'} target="_blank">Twitter</Link>
+                        <Link href={'https://www.instagram.com/jefitapp/'} target="_blank">Instagram</Link>
                     </Stack>
                 </SimpleGrid>
             </Container>

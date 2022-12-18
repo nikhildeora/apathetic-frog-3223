@@ -23,7 +23,7 @@ const DefaultExerciseRow = () => {
             'Authorization': 'Token 86f05362b8662eea31bb8b2d1e44db554c55638f'
         }
     }).then((res)=>{
-        console.log(res.data.results)
+        // console.log(res.data.results)
         setData(res.data.results)})
         .then(setLoading(false))
     .catch((err)=>console.log(err))

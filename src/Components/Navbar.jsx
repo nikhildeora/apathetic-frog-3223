@@ -23,11 +23,14 @@ import {
     ChevronRightIcon,
 } from '@chakra-ui/icons';
 import logo from "../Images/Newfitnexylogo.jpg"
-import {Link as RouterLink, Route} from "react-router-dom"
+import { Link as RouterLink, Route } from "react-router-dom"
+import { useContext } from 'react';
+import { AuthContext } from '../Contexts/AuthContext';
 
 // borderColor={useColorModeValue('grey.200', 'gray.900')}
 export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+    const { Logout, currentUser } = useContext(AuthContext)
 
     return (
         <Box>
@@ -40,7 +43,7 @@ export default function Navbar() {
                 px={{ base: 4 }}
                 borderBottom={1}
                 borderStyle={'solid'}
-                
+
                 align={'center'}>
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
@@ -64,7 +67,7 @@ export default function Navbar() {
                     </Text> */}
                     <RouterLink to={"/"}>
 
-                    <Image w={"170px"} border={"none"} src={logo} ></Image>
+                        <Image w={"170px"} border={"none"} src={logo} ></Image>
                     </RouterLink>
 
 
@@ -79,31 +82,48 @@ export default function Navbar() {
                     direction={'row'}
                     spacing={6}>
 
-                    <Button                      
+                    <Button
                         fontSize={'md'}
                         fontWeight={400}
                         variant={'link'}
                         color={"white"}
-                        >
-                 <RouterLink to={"/login"}>
-                        Sign In
-                </RouterLink>
-                    </Button>
-                    <RouterLink to={"/signup"}>
+                    >
+                        {currentUser === null ? <RouterLink to={"/login"}>
+                            Sign In
+                        </RouterLink> : currentUser.displayName===null ? currentUser.email : currentUser.displayName}
 
+                    </Button>
+
+                    {currentUser === null ? <RouterLink to={"/signup"}>
+
+                        <Button
+                            display={{ base: 'none', md: 'inline-flex' }}
+                            fontSize={'md'}
+                            fontWeight={600}
+                            color={'blue'}
+                            bg={'white'}
+                            _hover={{
+                                bg: 'blue',
+                                color: 'white'
+                            }}>
+                            Sign Up
+                        </Button>
+                    </RouterLink> : 
                     <Button
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'md'}
                         fontWeight={600}
+                        onClick={Logout}
                         color={'blue'}
                         bg={'white'}
                         _hover={{
                             bg: 'blue',
                             color: 'white'
                         }}>
-                        Sign Up
-                    </Button>
-                </RouterLink>
+                        Logout
+                    </Button>}
+
+
                 </Stack>
             </Flex>
 
@@ -127,19 +147,19 @@ const DesktopNav = () => {
                         <PopoverTrigger>
 
                             <RouterLink to={navItem.href ?? navItem.href}>
-                            <Text
-                                p={2}
-                                // href={navItem.href ?? '#'}
-                                fontSize={'lg'}
-                                fontWeight={500}
-                                color={linkColor}
-                                _hover={{
-                                    textDecoration: 'none',
-                                    color: linkHoverColor,
-                                }}>
-                                {navItem.label}
-                            </Text>
-                         </RouterLink>
+                                <Text
+                                    p={2}
+                                    // href={navItem.href ?? '#'}
+                                    fontSize={'lg'}
+                                    fontWeight={500}
+                                    color={linkColor}
+                                    _hover={{
+                                        textDecoration: 'none',
+                                        color: linkHoverColor,
+                                    }}>
+                                    {navItem.label}
+                                </Text>
+                            </RouterLink>
                         </PopoverTrigger>
 
                         {navItem.children && (
@@ -168,42 +188,42 @@ const DesktopNav = () => {
 
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
-    
+
     return (
-        
+
         <RouterLink to={subLabel ? href : null}>
 
-        <Box
-        
-        role={'group'}
-        display={'block'}
-        p={2}
-            rounded={'md'}
-            _hover={{ bg: useColorModeValue('white', 'gray.900') }}>
-            <Stack direction={'row'} align={'center'}>
-                <Box>
-                    <Text
+            <Box
+
+                role={'group'}
+                display={'block'}
+                p={2}
+                rounded={'md'}
+                _hover={{ bg: useColorModeValue('white', 'gray.900') }}>
+                <Stack direction={'row'} align={'center'}>
+                    <Box>
+                        <Text
+                            transition={'all .3s ease'}
+                            _groupHover={{ color: 'black' }}
+                            fontWeight={500}>
+                            {label}
+                        </Text>
+
+                    </Box>
+                    <Flex
                         transition={'all .3s ease'}
-                        _groupHover={{ color: 'black' }}
-                        fontWeight={500}>
-                        {label}
-                    </Text>
-                    
-                </Box>
-                <Flex
-                    transition={'all .3s ease'}
-                    transform={'translateX(-10px)'}
-                    opacity={0}
-                    _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-                    justify={'flex-end'}
-                    align={'center'}
-                    flex={1}>
-                    <Icon color={'black'} w={5} h={5} as={ChevronRightIcon} />
-                </Flex>
-            </Stack>
-        </Box>
-    </RouterLink>
-   
+                        transform={'translateX(-10px)'}
+                        opacity={0}
+                        _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+                        justify={'flex-end'}
+                        align={'center'}
+                        flex={1}>
+                        <Icon color={'black'} w={5} h={5} as={ChevronRightIcon} />
+                    </Flex>
+                </Stack>
+            </Box>
+        </RouterLink>
+
     );
 };
 
@@ -235,13 +255,13 @@ const MobileNavItem = ({ label, children, href }) => {
                 _hover={{
                     textDecoration: 'none',
                 }}>
-                 <RouterLink to={href ?? href}>
-                <Text
-                    fontWeight={600}
-                    color={useColorModeValue('gray.600', 'gray.200')}>
-                    {label}
-                </Text>
-              </RouterLink>
+                <RouterLink to={href ?? href}>
+                    <Text
+                        fontWeight={600}
+                        color={useColorModeValue('gray.600', 'gray.200')}>
+                        {label}
+                    </Text>
+                </RouterLink>
                 {children && (
                     <Icon
                         as={ChevronDownIcon}
@@ -264,10 +284,10 @@ const MobileNavItem = ({ label, children, href }) => {
                     {children &&
                         children.map((child) => (
                             <RouterLink key={child.label} to={child.subLabel ? child.href : null}>
-                            {/* href={child.href} */}
-                            <Text  py={2} >
-                                {child.label}
-                            </Text>
+                                {/* href={child.href} */}
+                                <Text py={2} >
+                                    {child.label}
+                                </Text>
                             </RouterLink>
                         ))}
                 </Stack>

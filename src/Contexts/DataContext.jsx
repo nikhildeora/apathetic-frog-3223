@@ -8,21 +8,21 @@ export default function DataContextProvider({ children }) {
     const [contextstate, setContextstate] = useState(true)
     const [blog, setBlog] = useState({})
 
+    // axios(`http://localhost:8000/schedule`)
     useEffect(() => {
-        // axios(`http://localhost:8000/schedule`)
         axios(`https://render-deployed-fitnexy.onrender.com/schedule`)
             .then((res) => {
                 setCompletescheduledata(res.data)
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch((err) => console.log(err))
     }, [contextstate])
 
+    // axios.delete(`http://localhost:8000/schedule/${id}`)
     const Deletewholeday = (id) => {
-        setContextstate(!contextstate);
-        // axios.delete(`http://localhost:8000/schedule/${id}`)
+       
         axios.delete(`https://render-deployed-fitnexy.onrender.com/schedule/${id}`)
-            .then((res) => console.log(res))
+            .then((res) =>  setContextstate(!contextstate))
             .catch((err) => console.log(err))
     }
 

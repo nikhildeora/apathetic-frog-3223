@@ -13,6 +13,10 @@ import CreatenewPlan from '../Pages/CreatenewPlan'
 import ExercisecompleteDetailpage from '../Pages/ExercisecompleteDetailpage'
 import AllExerciseTable from '../Pages/AllExerciseTable'
 import SingleBlog from '../Pages/SingleBlog'
+import PrivateRoute from './PrivateRoute'
+import NotFound from '../Pages/NotFound'
+import PrivacyPolicy from '../Pages/PrivacyPolicy'
+import ForgotPassword from '../Pages/ForgotPassword'
 
 
 const AllRoutes = () => {
@@ -20,8 +24,16 @@ const AllRoutes = () => {
     <Routes >
         <Route path='/' element={<Home />} ></Route>
         <Route path='/getapp' element={<GetApp />}></Route>
-        <Route path="/myplans" element={<MyPlans />}></Route>
-        <Route path="/createnewplan" element={<CreatenewPlan />}></Route>
+        <Route path="/myplans" element={
+        <PrivateRoute>
+          <MyPlans />
+        </PrivateRoute>
+        }></Route>
+        <Route path="/createnewplan" element={
+        <PrivateRoute>
+          <CreatenewPlan />
+        </PrivateRoute>
+        }></Route>
         <Route path='/exercise' element={<Exercise />}></Route>
         <Route path='/exercisedetail/:id' element={<ExercisecompleteDetailpage />}></Route>
         <Route path='/community' element={<Community />}></Route>
@@ -31,6 +43,9 @@ const AllRoutes = () => {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/allexercise/:category' element={<AllExerciseTable />}></Route>
         <Route path='/singleblog' element={<SingleBlog />}></Route>
+        <Route path='/privacypolicy' element={<PrivacyPolicy />}></Route>
+        <Route path='/forgotpass' element={<ForgotPassword />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
     </Routes>
   )
 }

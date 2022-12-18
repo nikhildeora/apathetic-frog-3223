@@ -6,17 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
 import { ChakraProvider } from '@chakra-ui/react'
 import DataContextProvider from './Contexts/DataContext';
+import AuthContextProvider from './Contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <DataContextProvider>
   <ChakraProvider>
   <BrowserRouter>
+  <AuthContextProvider>
+    <DataContextProvider>
     <App />
+  </DataContextProvider>
+  </AuthContextProvider>
   </BrowserRouter>
   </ChakraProvider>
-  </DataContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
