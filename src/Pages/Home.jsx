@@ -6,6 +6,7 @@ import SplitWithImagesecond from '../Components/Features2';
 import SplitWithImagethird from '../Components/Features3';
 import HeroBanner from '../Components/HeroBanner';
 import Pricing from '../Components/Pricing';
+import {Link} from "react-router-dom"
 
 const Home = () => {
   return (
@@ -62,7 +63,7 @@ const Home = () => {
       <VStack gap={"4"} mt={"37px"} mb={"50px"}>
         <Heading>WANT TO BUILD YOUR OWN WORKOUT PLAN?</Heading>
         <Text fontSize={"27px"} w={["600px", "900", "1200px"]}>Customize your workout plan with over 3000 free exercises in Fitnexy Workout Plan Builder. And easily share with friends.</Text>
-        <ButtonWithShadow buttontext={"Create Workout Plan"} />
+        <Link to={"/createnewplan"}> <ButtonWithShadow buttontext={"Create Workout Plan"} /></Link>
       </VStack>
 
       

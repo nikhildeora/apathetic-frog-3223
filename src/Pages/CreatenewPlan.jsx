@@ -47,7 +47,7 @@ const CreatenewPlan = () => {
     axios(`https://render-deployed-fitnexy.onrender.com/schedule`)
       .then((res) => {
         setSchejson(res.data)
-        console.log(res.data)
+        // console.log(res.data)
       })
       .catch((err) => console.log(err))
   }, [state, statetd])
@@ -62,8 +62,7 @@ const CreatenewPlan = () => {
       "myday": day,
       "schedules": []
     })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      
   }
 
 
@@ -96,7 +95,7 @@ const CreatenewPlan = () => {
     axios(`https://render-deployed-fitnexy.onrender.com/schedule/${dayid}`)
       .then((res) => {
         newdeeclareobj = res.data.schedules
-      }).then(() => console.log("newdeclared", newdeeclareobj))
+      })
       .finally(() => {
         // axios.patch(`http://localhost:8000/schedule/${dayid}`, {
         axios.patch(`https://render-deployed-fitnexy.onrender.com/schedule/${dayid}`, {
@@ -116,7 +115,7 @@ const CreatenewPlan = () => {
     })
       .then((res) => {
         setAlldata(res.data.results)
-        console.log(res.data.results)
+        // console.log(res.data.results)
       })
       .catch((err) => console.log(err))
   }, [])
