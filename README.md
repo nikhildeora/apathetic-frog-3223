@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Fitnexy (Inspired by Jefit.com)
+Fitnexy is a platform where you can create your exercise plan. Here you can find some default plans for beginners, intermediates, and experts and you can also create your own plan.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![fitnexyHomepage](https://user-images.githubusercontent.com/112634386/212715197-6fd5ba85-16f0-4712-91e4-bbb39b314e21.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Default Plans
+There are some default plans. 
 
-### `npm start`
+![Screenshot (154)](https://user-images.githubusercontent.com/112634386/212719127-4c60e626-3f49-40dc-a099-add253650d7c.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Create Your Own Plan
+![Screenshot (153)](https://user-images.githubusercontent.com/112634386/212719382-9801bc81-ef81-46e1-bd6a-1ab96ea813ad.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Highlights
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Solo Project.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# To Run Locally
+## Clone the project
+```bash
+  git clone https://github.com/nikhildeora/apathetic-frog-3223.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project directory
 
-### `npm run eject`
+```bash
+  cd binarydigital
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  json-server --watch db.json --port 3000
+```
 
-## Learn More
+```bash
+  npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React.\
+JavaScript.\
+Chakra UI.\
+Swipper JS.
 
-### Code Splitting
+# About
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Reliance Digital brings to you an online platform, which can be accessed for all your Tech needs.India’s leading digital consumer Electronics platform.
