@@ -28,7 +28,7 @@ Solo Project.
 Go to the project directory
 
 ```bash
-  cd binarydigital
+  cd apathetic-frog-3223
 ```
 
 Install dependencies
@@ -39,9 +39,6 @@ Install dependencies
 
 Start the server
 
-```bash
-  json-server --watch db.json --port 3000
-```
 
 ```bash
   npm run start
@@ -49,11 +46,11 @@ Start the server
 
 # Tech Stack
 
-React.\
+HTML.\
+CSS.\
 JavaScript.\
+React.\
 Chakra UI.\
-Swipper JS.
+Firebase.\
 
-# About
 
-Reliance Digital brings to you an online platform, which can be accessed for all your Tech needs.India’s leading digital consumer Electronics platform.
