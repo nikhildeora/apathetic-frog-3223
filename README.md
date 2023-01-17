@@ -51,6 +51,6 @@ CSS.\
 JavaScript.\
 React.\
 Chakra UI.\
-Firebase.\
+Firebase.
 
 
