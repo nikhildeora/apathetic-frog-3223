@@ -31,13 +31,13 @@ Solo Project.
 # To Run Locally
 ## Clone the project
 ```bash
-  git clone https://github.com/nikhildeora/apathetic-frog-3223.git
+  git clone https://github.com/nikhildeora/fitnexy.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd apathetic-frog-3223
+  cd fitnexy
 ```
 
 Install dependencies
